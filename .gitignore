@@ -1,11 +1,11 @@
 HELP.md
-.log
-.env
+*.log
+*.env
 target/
 .gradle
-.properties
-.yml
-.yaml
+*.properties
+*.yml
+*.yaml
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
