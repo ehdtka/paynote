@@ -4,7 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.paynote'
+group = 'com.ds.paynote'
 version = '0.0.1-SNAPSHOT'
 description = '개인 가계부 웹 서비스'
 
@@ -37,9 +37,18 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+//	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // Querydsl JPA Jakarta 지원
+    implementation "com.querydsl:querydsl-jpa:5.0.0:jakarta"
+
+    // Q 클래스 생성(annotation processor)
+    annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
+
+    // Jakarta API annotation processor
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
 }
 
 tasks.named('test') {
